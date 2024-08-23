@@ -29,9 +29,12 @@ int numIslands(vector<vector<char>>& grid) {
 					{
 						int x = pt.first+mx[k];
 						int y = pt.second+my[k];
-						if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == '1'&&vb[x][y]==false)
+						if (x >= 0 && x < m && y >= 0 && y < n )
 						{
-							q.emplace(PII(x,y));
+							if (grid[x][y] == '1' && vb[x][y] == false)
+							{
+								q.emplace(PII(x, y));
+							}
 							vb[x][y] = true;
 						}
 					}
